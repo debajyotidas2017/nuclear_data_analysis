@@ -6,7 +6,7 @@ from datetime import datetime
 
 # ---------------------------- user input part starts here ------------------------------
 
-filename_input = 'Itoh_9_7.dat'         # Energy spectrum filename
+filename_input = 'EnergySpectrum.dat'         # Energy spectrum filename
 filename_output_suffix = '_Smeared'     # suffix of the output file
 filePath_output = './output/'            # path of output folder
 plotPath_output = './outputPlots/'

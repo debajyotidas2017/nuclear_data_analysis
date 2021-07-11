@@ -1,3 +1,4 @@
 # Byte-compiled / optimized / DLL files
 
+# directories to ignore
 .idea/

@@ -1,3 +1,5 @@
+# plot templates used in other files ------------------------------
+
 import matplotlib.pyplot as plt
 
 plt.rcParams['axes.titlesize'] = 20

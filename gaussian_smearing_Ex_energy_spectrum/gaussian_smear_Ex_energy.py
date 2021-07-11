@@ -96,7 +96,7 @@ binned_counts = np.around(binned_counts, decimals=8)
 # print('Binned Ex Energies:',binned_EX_energies)
 # print('Binned Counts:',binned_counts)
 
-# Gaussian Smear and Spline of data ---------------------------------------------
+# Gaussian Smear and Spline of data -----------------------------------------------------
 
 binned_counts_smeared = gaussian_filter1d(binned_counts, sigma=sigma, mode='nearest')
 
@@ -105,7 +105,7 @@ binned_EX_energies_splined = np.arange(binned_EX_energies[0], binned_EX_energies
 binned_counts_smeared_splined = interpolate.splev(binned_EX_energies_splined, binned_counts_smeared_tck, der=0)
 
 
-# writing smeared Ex. energy spectrum in output file -----------------------------------------------
+# writing smeared Ex. energy spectrum in output file ------------------------------------
 
 smeared_Energy_spectrum = np.zeros(shape=(len(binned_counts_smeared),2), dtype=float)
 
@@ -119,7 +119,7 @@ filename_outputfmt = filePath_output + filename_strlist[0] + filename_output_suf
 
 np.savetxt(fname=filename_outputfmt, X=smeared_Energy_spectrum, fmt=outputPrecision_fmt, delimiter='    ', newline='\n')
 
-# source the _plot_master.py file which contains styles for plot -----------------------------------
+# source the _plot_master.py file which contains styles for plot ------------------------
 exec(open('./_plot_master.py').read())
 
 plt.plot(Ex_energy, counts, color='black', label = 'raw data')
@@ -132,7 +132,7 @@ plt.ylabel('Counts/MeV')
 plt.legend()
 
 
-# Plot smeared Energy spectrum and save the plots --------------------------------------
+# Plot smeared Energy spectrum and save the plots ---------------------------------------
 
 timestamp_now = datetime.now()
 timestamp_str = timestamp_now.strftime("%Y%m%d_%H%M%S")

@@ -139,9 +139,9 @@ timestamp_str = timestamp_now.strftime("%Y%m%d_%H%M%S")
 Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) + timestamp_str
 # print(Plotname_outputfmt)
 
-plt.savefig(Plotname_outputfmt+'.png', dpi=300)
-plt.savefig(Plotname_outputfmt+'.jpeg', dpi=300)
-plt.savefig(Plotname_outputfmt+'.pdf', dpi=300)
+plt.savefig(fname=Plotname_outputfmt+'.png', dpi=300)
+plt.savefig(fname=Plotname_outputfmt+'.jpeg', dpi=300)
+plt.savefig(fname=Plotname_outputfmt+'.pdf', dpi=300)
 
 plt.show()
 

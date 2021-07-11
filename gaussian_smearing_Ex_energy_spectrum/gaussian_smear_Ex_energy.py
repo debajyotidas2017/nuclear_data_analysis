@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate
 
-energySpectrum = np.loadtxt('Itoh_9_7.dat')
+# energySpectrum = np.loadtxt('Itoh_9_7.dat')
+energySpectrum = np.loadtxt('test_data.txt')
 
 Ex_energy = energySpectrum[:, 0]
 counts = energySpectrum[:, 1]
@@ -49,33 +50,60 @@ binned_counts = []
 
 print('Binned Segments:', binned_segments)
 
+# i = 0
+# binned_count = 0
+# for idx in range(len(energySpectrum)):
+#     if binned_segments[i] < energySpectrum[idx][0] < binned_segments[i + 1]:
+#         print(energySpectrum[idx][0])
+#         binned_count = binned_count + energySpectrum[idx][1]
+#     else:
+#         print('Binning stopped. Shifting to next binned segment')
+#         print(energySpectrum[idx][0])
+#         EX_energy_per_seg = (binned_segments[i] + binned_segments[i+1]) / 2
+#         binned_EX_energies.append(EX_energy_per_seg)
+#         binned_counts.append(binned_count)
+#         # print('Binned Counts:', binned_count)
+#         i = i+1
+#         binned_count = 0
+#         binned_count = binned_count + energySpectrum[idx][1]
+
+
 i = 0
 binned_count = 0
 for idx in range(len(energySpectrum)):
     if binned_segments[i] < energySpectrum[idx][0] < binned_segments[i + 1]:
         print(energySpectrum[idx][0])
         binned_count = binned_count + energySpectrum[idx][1]
-    else:
-        # print(energySpectrum[idx][0])
-        # print('Binning stopped. Shifting to next binned segment')
-        EX_energy_per_seg = (binned_segments[i] + binned_segments[i+1]) / 2
+        if energySpectrum[idx][0] == energySpectrum[-1][0]:
+            EX_energy_per_seg = (binned_segments[i] + binned_segments[i + 1]) / 2
+            binned_EX_energies.append(EX_energy_per_seg)
+            binned_counts.append(binned_count)
+    elif energySpectrum[idx][0] >= binned_segments[i + 1]:
+        print('Binning stopped. Shifting to next binned segment')
+        print(energySpectrum[idx][0])
+        EX_energy_per_seg = (binned_segments[i] + binned_segments[i + 1]) / 2
         binned_EX_energies.append(EX_energy_per_seg)
         binned_counts.append(binned_count)
-        # print('Binned Counts:', binned_count)
         i = i+1
         binned_count = 0
         binned_count = binned_count + energySpectrum[idx][1]
+        if energySpectrum[idx][0] == energySpectrum[-1][0]:
+            EX_energy_per_seg = (binned_segments[i] + binned_segments[i + 1]) / 2
+            binned_EX_energies.append(EX_energy_per_seg)
+            binned_counts.append(binned_count)
+
+
 
 
 
 binned_EX_energies = np.around(binned_EX_energies, decimals=3)
 binned_counts = np.around(binned_counts, decimals=5)
 
-print(binned_EX_energies)
-print(binned_counts)
+print('Binned Ex Energies:',binned_EX_energies)
+print('Binned Counts:',binned_counts)
 
-print(len(binned_EX_energies))
-print(len(binned_counts))
+# print(len(binned_EX_energies))
+# print(len(binned_counts))
 
 
 
@@ -104,4 +132,4 @@ plt.plot(binned_EX_energies_splined, binned_counts_smeared_splined, color='blue'
 plt.xlabel('Excitaion Energy [MeV]')
 plt.ylabel('Counts/MeV')
 plt.legend()
-plt.show()
+# plt.show()

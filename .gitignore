@@ -2,3 +2,8 @@
 
 # directories to ignore
 .idea/
+
+#extensions to ignore
+*.log
+*.pot
+*.pyc

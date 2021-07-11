@@ -17,7 +17,6 @@ manual_bin_Positions = False
 bin_startPosition = 3.000               # position (in MeV) from where binning will start
 bin_endPosition = 35.400                # position (in MeV) at which binning will stop
 
-
 binned_segments = []
 
 if manual_bin_Positions:

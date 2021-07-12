@@ -14,7 +14,8 @@ plotname_output_suffix = '_Smeared'
 
 bin_width = 0.400       # writing bin width of 400 keV in MeV
 
-manual_bin_Positions = False
+manual_bin_Positions = False        # default value is False (with False it can perfectly work). If wanted
+# then manual_bin_Positions can be set to True and bin Positions can be set manually
 # if (manual_bin_positions == True) then give values for bin_startPosition and bin_endPosition
 # position (in MeV) from where binning will start
 bin_startPosition = 3.000

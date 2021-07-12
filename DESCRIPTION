@@ -1,0 +1,14 @@
+Package: nuclear data analysis
+Type: Package
+Title: Gaussian Smearing of Energy Spectrum
+Version: 20210712
+Author: Debajyoti Das
+Maintainer: D. Das <debajyotidas2017@gmail.com>
+Description: This package is used to do gaussian smear of energy spectrum.
+License: file LICENSE
+Encoding: UTF-8
+Imports:
+        numpy,
+        scipy,
+        matplotlib,
+        datetime

@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul 11 2021
-@author: DEBAJYOTI DAS
-"""
 # plot templates used in other files --------------------------------
 
 import matplotlib.pyplot as plt

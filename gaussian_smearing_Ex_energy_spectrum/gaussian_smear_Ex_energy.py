@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul 11 2021
-@author: DEBAJYOTI DAS
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter1d
@@ -20,7 +14,7 @@ plotname_output_suffix = '_Smeared'
 
 bin_width = 0.400       # writing bin width of 400 keV in MeV
 
-manual_bin_Positions = True
+manual_bin_Positions = False
 # if (manual_bin_positions == True) then give values for bin_startPosition and bin_endPosition
 # position (in MeV) from where binning will start
 bin_startPosition = 3.000
@@ -142,7 +136,8 @@ plt.legend()
 
 timestamp_now = datetime.now()
 timestamp_str = timestamp_now.strftime("%Y%m%d_%H%M%S")
-Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) + timestamp_str
+Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix \
+                     + '_Sig{:0.2f}_'.format(sigma) +'BIN{:0.0f}keV_'.format(bin_width*1000) + timestamp_str
 # print(Plotname_outputfmt)
 
 plt.savefig(fname=Plotname_outputfmt+'.png', dpi=300)

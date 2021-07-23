@@ -3,12 +3,12 @@
 # directories to ignore
 .idea/
 .outputPlots/*
-!EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.jpeg
-!EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.pdf
-!EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.png
-!EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.jpeg
-!EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.png
-!EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.pdf
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.jpeg
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.pdf
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.png
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.jpeg
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.png
+!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.pdf
 
 #extensions to ignore
 *.log

@@ -124,12 +124,12 @@ np.savetxt(fname=filename_outputfmt, X=smeared_Energy_spectrum, fmt=outputPrecis
 exec(open('./_plot_master.py').read())
 
 plt.plot(Ex_energy, counts, color='black', label = 'raw data')
-plt.plot(binned_EX_energies, binned_counts, color='red', label='binned data')
+plt.plot(binned_EX_energies, binned_counts, color='blue', label='binned data')
 # plt.plot(binned_EX_energies, binned_counts_smeared, color='blue', label='binned + smeared data')
-plt.plot(binned_EX_energies_splined, binned_counts_smeared_splined, color='blue', linewidth=1.5, label='binned + smeared + splined data')
+plt.plot(binned_EX_energies_splined, binned_counts_smeared_splined, color='red', linewidth=1.5, label='binned + smeared + splined data')
 
 plt.xlabel('Excitaion Energy [MeV]')
-plt.ylabel('Counts/MeV')
+plt.ylabel('Counts / {:.0f}keV'.format(bin_width*1000))
 plt.legend()
 
 
@@ -137,8 +137,7 @@ plt.legend()
 
 timestamp_now = datetime.now()
 timestamp_str = timestamp_now.strftime("%Y%m%d_%H%M%S")
-Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix \
-                     + '_Sig{:0.2f}_'.format(sigma) +'BIN{:0.0f}keV_'.format(bin_width*1000) + timestamp_str
+Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) +'BIN{:0.0f}keV_'.format(bin_width*1000) + timestamp_str
 # print(Plotname_outputfmt)
 
 plt.savefig(fname=Plotname_outputfmt+'.png', dpi=300)

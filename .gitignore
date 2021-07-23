@@ -3,7 +3,7 @@
 # directories to ignore
 .idea/
 
-.gaussian_smearing_Ex_energy_spectrum/outputPlots/
+gaussian_smearing_Ex_energy_spectrum/outputPlots/*
 
 #extensions to ignore
 *.log

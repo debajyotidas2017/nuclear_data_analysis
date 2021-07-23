@@ -2,13 +2,8 @@
 
 # directories to ignore
 .idea/
-.outputPlots/*
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.jpeg
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.pdf
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_204316.png
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.jpeg
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.png
-!.outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.pdf
+.nuclear_data_analysis/gaussian_smearing_Ex_energy_spectrum/outputPlots/*
+
 
 #extensions to ignore
 *.log

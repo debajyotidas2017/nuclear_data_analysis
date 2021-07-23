@@ -3,7 +3,7 @@
 # directories to ignore
 .idea/
 
-# ignoring outputPlots folder -----------
+# ignoring outputPlots folder located inside gaussian_smearing_Ex_energy_spectrum folder -----------
 gaussian_smearing_Ex_energy_spectrum/outputPlots/*
 # except these 6 files. These 6 files in outputPlots folder are not ignored. They are always added.
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.jpeg

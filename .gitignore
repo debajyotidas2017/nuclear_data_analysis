@@ -2,7 +2,7 @@
 
 # directories to ignore
 .idea/
-.nuclear_data_analysis/gaussian_smearing_Ex_energy_spectrum/outputPlots/*
+.gaussian_smearing_Ex_energy_spectrum/outputPlots/*
 
 
 #extensions to ignore

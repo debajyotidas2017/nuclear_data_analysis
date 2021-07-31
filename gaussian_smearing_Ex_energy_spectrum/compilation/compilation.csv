@@ -9,3 +9,11 @@ runtime,EnergySpectrumInputFile,SmearedSpectrumOutputFile,SigmaValue,Xmin,Xmax,X
 20210731_202114,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,8,0:02:20.485348
 20210731_202424,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,7,0:02:10.054860
 20210731_202709,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,1,0:05:38.669293
+20210731_213105,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.1,Windows,4,0:00:03.306588
+20210731_213303,spec3.7.dat,spec3.7_Smeared_Sig0.10.txt,0.1,2.975,40.033,0.01,0.1,Windows,4,0:00:03.342022
+20210731_213329,spec3.7.dat,spec3.7_Smeared_Sig0.20.txt,0.2,2.975,40.033,0.01,0.1,Windows,4,0:00:03.247936
+20210731_213356,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.1,Windows,4,0:00:03.668013
+20210731_213628,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.1,0.01,Windows,4,0:00:03.156791
+20210731_213652,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.1,0.001,Windows,4,0:00:15.249016
+20210731_213824,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.01,Windows,4,0:00:16.520846
+20210731_213906,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.001,0.01,Windows,4,0:03:32.742282

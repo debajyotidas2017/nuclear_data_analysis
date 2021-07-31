@@ -22,10 +22,10 @@ include_in_compilation = True               # set to True if want to include com
 sigma = 0.15                        # Gaussian Kernel sigma value to smear energy spectrum
 
 # define MeshSize to be used in integration of gaussian kernel ( Mesh = MeshSize * sigma ).
-MeshSize = 0.001                    # This will be used as stepsize of gaussian integral variable t ...
+MeshSize = 0.01                    # This will be used as stepsize of gaussian integral variable t ...
 XStepSize = 0.01                    # Stepsize for NOT-Smeared epectrum
 outputPrecision_fmt = '%0.5e'       # write data in Output file with upto 5 decimal points
-freeCores = 7                       # the number of free CPU cores. Keep at least 1 CPU core free...
+freeCores = 4                       # the number of free CPU cores. Keep at least 1 CPU core free...
 # ----------------------------- user input part ends here -------------------------------
 
 
@@ -209,12 +209,12 @@ if __name__ == "__main__":
         # If compilation folder exists, then it is left unaltered (because exist_ok = True)
         os.makedirs(compilation_folder, exist_ok=True)
         if (not os.path.exists(compilation_fileWP)):
-            with open(compilation_fileWP, 'a') as csvfile:
+            with open(compilation_fileWP, mode='a', newline='\n') as csvfile:
                 csvDictWriter = csv.DictWriter(csvfile, fieldnames=columnNames)
                 csvDictWriter.writeheader()                     # if the compilation file does not exist then Headers of columns are written
                 csvDictWriter.writerow(df_output_excel)
         # if the compilation file exist then Headers of columns are not written in compilation file
         elif os.path.exists(compilation_fileWP):
-            with open(compilation_fileWP, 'a') as csvfile:
+            with open(compilation_fileWP, mode='a',newline='\n') as csvfile:
                 csvDictWriter = csv.DictWriter(csvfile, fieldnames=columnNames)
                 csvDictWriter.writerow(df_output_excel)

@@ -1,6 +1,6 @@
 import numpy as np
 
-filename_input = 'Itoh_9_7.dat'         # Energy spectrum filename
+filename_input = 'EnergySpectrum.dat'         # Energy spectrum filename
 filename_output_suffix = '_smeared.txt'     # suffix of the output file
 filePath_output = './output/'            # path of output folder
 

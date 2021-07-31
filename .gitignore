@@ -5,13 +5,16 @@
 
 # ignoring outputPlots folder located inside gaussian_smearing_Ex_energy_spectrum folder -----------
 gaussian_smearing_Ex_energy_spectrum/outputPlots/*
-# except these 6 files. These 6 files in outputPlots folder are not ignored. They are always added -----------
+# except these 9 files. These 9 files in outputPlots folder are not ignored. They are always added -----------
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.jpeg
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.pdf
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN80keV_20210723_195106.png
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_213328.jpeg
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_213328.pdf
 !gaussian_smearing_Ex_energy_spectrum/outputPlots/EnergySpectrum_Smeared_Sig0.60_BIN400keV_20210723_213328.png
+!gaussian_smearing_Ex_energy_spectrum/outputPlots/spec3.7_Smeared_Sig0.15_20210731_093605.jpeg
+!gaussian_smearing_Ex_energy_spectrum/outputPlots/spec3.7_Smeared_Sig0.15_20210731_093605.pdf
+!gaussian_smearing_Ex_energy_spectrum/outputPlots/spec3.7_Smeared_Sig0.15_20210731_093605.png
 
 #extensions to ignore
 *.log

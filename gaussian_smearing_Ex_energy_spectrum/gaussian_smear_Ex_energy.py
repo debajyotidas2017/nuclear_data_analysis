@@ -7,6 +7,7 @@ from datetime import datetime
 # ---------------------------- user input part starts here ------------------------------
 
 filename_input = 'EnergySpectrum.dat'       # Energy spectrum filename
+# filename_input = 'Smeared_Itoh_Oxygen_data_3.7deg.dat'
 filename_output_suffix = '_Smeared'         # suffix of the output file
 filePath_output = './output/'               # path of output folder
 plotPath_output = './outputPlots/'
@@ -140,9 +141,9 @@ timestamp_str = timestamp_now.strftime("%Y%m%d_%H%M%S")
 Plotname_outputfmt = plotPath_output + filename_strlist[0] + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) +'BIN{:0.0f}keV_'.format(bin_width*1000) + timestamp_str
 # print(Plotname_outputfmt)
 
-plt.savefig(fname=Plotname_outputfmt+'.png', dpi=300)
-plt.savefig(fname=Plotname_outputfmt+'.jpeg', dpi=300)
-plt.savefig(fname=Plotname_outputfmt+'.pdf', dpi=300)
+# plt.savefig(fname=Plotname_outputfmt+'.png', dpi=300)
+# plt.savefig(fname=Plotname_outputfmt+'.jpeg', dpi=300)
+# plt.savefig(fname=Plotname_outputfmt+'.pdf', dpi=300)
 
 plt.show()
 

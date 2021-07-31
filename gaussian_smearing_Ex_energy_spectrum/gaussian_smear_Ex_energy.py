@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Gaussian Smearing program using gaussian_filter1d \n
+This program does the following things:
+ - perform binning of Energy Spectrum data
+ - perform gaussian smearing of binned data using gaussian_filter1d function
+ - save the Smeared energy spectrum data in ./output folder
+ - plot the data and save plots in ./outputPlots folder
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter1d

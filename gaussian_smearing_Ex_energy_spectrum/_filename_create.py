@@ -25,4 +25,4 @@ smeared_Energy_spectrum[:,1] = data[:,1]
 print(smeared_Energy_spectrum)
 np.savetxt(fname=filename_output, X=smeared_Energy_spectrum, fmt='%.4e', delimiter='\t', newline='\n')
 
-data2 = np.loadtxt(filepath_output)
+data2 = np.loadtxt(filename_output)

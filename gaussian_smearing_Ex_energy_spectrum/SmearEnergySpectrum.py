@@ -182,9 +182,10 @@ if __name__ == "__main__":
 
     # plot output filename With Path
     timestamp_str = timestamp_start.strftime("%Y%m%d_%H%M%S")
+    Plotname_output = filename_inpstr + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) + timestamp_str
     # create ./outputPlots/ folder if it does not exist. And is left unaltered if it exists...
     os.makedirs(plotPath_output, exist_ok=True)
-    Plotname_outputWP = plotPath_output + filename_inpstr + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) + timestamp_str
+    Plotname_outputWP = plotPath_output + Plotname_output
     # save plot files
     plt.savefig(fname=Plotname_outputWP+'.png', dpi=300)
     plt.savefig(fname=Plotname_outputWP+'.jpeg', dpi=300)
@@ -196,6 +197,7 @@ if __name__ == "__main__":
     compilation_fileWP = compilation_folder + compilation_file
     df_output_excel = {'runtime':timestamp_str, 'EnergySpectrumInputFile':filename_input,
                       'SmearedSpectrumOutputFile': filename_output,
+                       'OutputPlotFile': Plotname_output,
                       'SigmaValue':sigma, 'Xmin':Xmin, 'Xmax':Xmax, 'XStepSize': XStepSize,
                       'MeshSize':MeshSize,'Platform':platform.system(), 'ClusterSize':use_cores,
                       'Script_RUNTIME':Tot_time}

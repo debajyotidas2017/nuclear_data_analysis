@@ -1,0 +1,11 @@
+runtime,EnergySpectrumInputFile,SmearedSpectrumOutputFile,SigmaValue,Xmin,Xmax,XStepSize,MeshSize,Platform,ClusterSize,Script_RUNTIME
+20210731_195226,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,4,0:01:51.426087
+20210731_195508,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,2,0:03:09.642945
+20210731_195920,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,6,0:02:03.437839
+20210731_200915,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,3,0:02:09.557222
+20210731_201230,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,5,0:02:04.455368
+20210731_201527,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,4,0:01:49.984825
+20210731_201742,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,7,0:02:11.006011
+20210731_202114,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,8,0:02:20.485348
+20210731_202424,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,7,0:02:10.054860
+20210731_202709,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,0.15,2.975,40.033,0.01,0.001,Linux,1,0:05:38.669293

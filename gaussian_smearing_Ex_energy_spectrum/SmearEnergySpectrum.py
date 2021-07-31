@@ -4,6 +4,9 @@ from scipy import interpolate
 from numba import jit
 from datetime import datetime
 import multiprocessing
+import platform
+import csv
+import os
 
 # ---------------------------- user input part starts here ------------------------------
 
@@ -12,15 +15,21 @@ filename_output_suffix = '_Smeared'         # suffix of the output file
 filePath_output = './output/'               # path of output folder where smeared spectrum data to be written
 plotPath_output = './outputPlots/'          # path where Plots will be generated
 plotname_output_suffix = '_Smeared'
-
+compilation_file = 'compilation.csv'        # write compilation data in compilation_file
+compilation_folder = './compilation/'       # compilation folder where compilation file is located
+include_in_compilation = True               # set to True if want to include compilation data in compilation_file
 
 sigma = 0.15                        # Gaussian Kernel sigma value to smear energy spectrum
+
+# define MeshSize to be used in integration of gaussian kernel ( Mesh = MeshSize * sigma ).
+MeshSize = 0.001                    # This will be used as stepsize of gaussian integral variable t ...
+XStepSize = 0.01                    # Stepsize for NOT-Smeared epectrum
 outputPrecision_fmt = '%0.5e'       # write data in Output file with upto 5 decimal points
-freeCores = 2                       # the number of free CPU cores. Keep at least 1 CPU core free...
+freeCores = 7                       # the number of free CPU cores. Keep at least 1 CPU core free...
 # ----------------------------- user input part ends here -------------------------------
 
 
-# ------------------------------ main program starts ------------------------------------
+# ----------------------------- Script body starts here ---------------------------------
 
 SpectrumData = np.loadtxt(filename_input)            # read the Energy Spectrum Data
 Xdata = SpectrumData[:, 0]
@@ -65,7 +74,7 @@ def SmearingFunction(x, sigma=sigma, Xboundary_min=Xmin, Xboundary_max=Xmax):
     # We will integrate in the limit from ( -3*sigma to +3*sigma )
     # Step size of Integration will be 0.001*sigma which we define as Mesh
 
-    Mesh = 0.001 * sigma
+    Mesh = MeshSize * sigma
     ThisY = 0.0
     SumY = 0.0
     SumGauss = 0.0
@@ -123,8 +132,8 @@ if __name__ == "__main__":
     use_cores = totalCores - freeCores              # use this much number of CPU cores
     print("Calculation running across %d out of %d CPU cores..."%(use_cores, totalCores))
 
-    # define the Xdata array with the setpsize. Here Xdata is fine (depending on step) excitation energy
-    eenergy = np.arange(start=Xmin, stop=Xmax, step=0.01)
+    # define the Xdata array with the setpsize. Here Xdata is fine (depending on step=XStepSize) excitation energy
+    eenergy = np.arange(start=Xmin, stop=Xmax, step=XStepSize)
 
     # set a pool of workers. The worker counts are the number of use_cores
     pool = multiprocessing.Pool(processes=use_cores)
@@ -146,6 +155,8 @@ if __name__ == "__main__":
     # --------------------------- Write the SmearedSpectrum in file --------------------------
     filename_inpstr = filename_input[:-4]                   # if filename_input is filename5.6.txt, then filename_inpstr will be filename5.6
     filename_output = filename_inpstr + filename_output_suffix + '_Sig{:0.2f}.txt'.format(sigma)
+    # create ./output/ folder if it does not exist. And is left unaltered if it exists...
+    os.makedirs(filePath_output, exist_ok=True)
     filename_outputWP = filePath_output + filename_output           # filename output With Path
 
     np.savetxt(fname=filename_outputWP, X=SmearedSpectrum, fmt=outputPrecision_fmt, delimiter='    ')
@@ -171,6 +182,8 @@ if __name__ == "__main__":
 
     # plot output filename With Path
     timestamp_str = timestamp_start.strftime("%Y%m%d_%H%M%S")
+    # create ./outputPlots/ folder if it does not exist. And is left unaltered if it exists...
+    os.makedirs(plotPath_output, exist_ok=True)
     Plotname_outputWP = plotPath_output + filename_inpstr + plotname_output_suffix + '_Sig{:0.2f}_'.format(sigma) + timestamp_str
     # save plot files
     plt.savefig(fname=Plotname_outputWP+'.png', dpi=300)
@@ -178,3 +191,30 @@ if __name__ == "__main__":
     plt.savefig(fname=Plotname_outputWP+'.pdf', dpi=300)
 
     plt.show()
+
+    # ---------------------- Write compilation data in compilation file ----------------------
+    compilation_fileWP = compilation_folder + compilation_file
+    df_output_excel = {'runtime':timestamp_str, 'EnergySpectrumInputFile':filename_input,
+                      'SmearedSpectrumOutputFile': filename_output,
+                      'SigmaValue':sigma, 'Xmin':Xmin, 'Xmax':Xmax, 'XStepSize': XStepSize,
+                      'MeshSize':MeshSize,'Platform':platform.system(), 'ClusterSize':use_cores,
+                      'Script_RUNTIME':Tot_time}
+
+    columnNames = [key for key in df_output_excel.keys()]
+
+    # if include_in_compilation is True then the compilation data is written in compilation file.
+    # Otherwise the data are not written.
+    if include_in_compilation:
+        # If compilation folder does not exist, then the compilation folder is created.
+        # If compilation folder exists, then it is left unaltered (because exist_ok = True)
+        os.makedirs(compilation_folder, exist_ok=True)
+        if (not os.path.exists(compilation_fileWP)):
+            with open(compilation_fileWP, 'a') as csvfile:
+                csvDictWriter = csv.DictWriter(csvfile, fieldnames=columnNames)
+                csvDictWriter.writeheader()                     # if the compilation file does not exist then Headers of columns are written
+                csvDictWriter.writerow(df_output_excel)
+        # if the compilation file exist then Headers of columns are not written in compilation file
+        elif os.path.exists(compilation_fileWP):
+            with open(compilation_fileWP, 'a') as csvfile:
+                csvDictWriter = csv.DictWriter(csvfile, fieldnames=columnNames)
+                csvDictWriter.writerow(df_output_excel)

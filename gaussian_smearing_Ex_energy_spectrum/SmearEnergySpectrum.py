@@ -142,6 +142,8 @@ if __name__ == "__main__":
     # Here smeared Ydata is SmearedCounts
     SmearedCounts = pool.map(SmearingFunction, eenergy)
 
+    pool.close()        # close the pool of workers/Cluster
+
     # Creating a 2D ndarray SmearedSpectrum filled with zeros of the shape of (rows = len(eenergy), 3)
     SmearedSpectrum = np.zeros(shape=(len(eenergy), 3))
     # first column of SmearedSpectrum is fine excitation energy

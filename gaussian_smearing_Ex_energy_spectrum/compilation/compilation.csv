@@ -1,0 +1,3 @@
+runtime,EnergySpectrumInputFile,SmearedSpectrumOutputFile,OutputPlotFile,SigmaValue,Xmin,Xmax,XStepSize,MeshSize,Platform,ClusterSize,Script_RUNTIME
+20210731_215930,EnergySpectrum9.7.dat,EnergySpectrum9.7_Smeared_Sig0.15.txt,EnergySpectrum9.7_Smeared_Sig0.15_20210731_215930,0.15,3.065,35.009,0.01,0.01,Windows,4,0:00:16.772496
+20210731_220052,spec3.7.dat,spec3.7_Smeared_Sig0.15.txt,spec3.7_Smeared_Sig0.15_20210731_220052,0.15,2.975,40.033,0.01,0.01,Windows,4,0:00:16.239432

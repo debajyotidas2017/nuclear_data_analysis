@@ -8,8 +8,8 @@ plt.rcParams['axes.titlesize'] = 20
 plt.rcParams['axes.labelsize'] = 20
 plt.rcParams['lines.linewidth'] = 1.0
 plt.rcParams['lines.markersize'] = 5
-plt.rcParams['xtick.labelsize'] = 12
-plt.rcParams['ytick.labelsize'] = 12
+plt.rcParams['xtick.labelsize'] = 15
+plt.rcParams['ytick.labelsize'] = 15
 plt.rcParams['legend.fontsize'] = 15
 
 # xtick settings -----------------------------------
@@ -26,7 +26,7 @@ plt.rcParams['ytick.minor.size'] = 7        # size of minor ytick
 
 # Figure parameters to save the figure -------------------------------------------------
 
-plt.rcParams['figure.figsize'] = (14, 9.8)     # figure size in inches
+plt.rcParams['figure.figsize'] = (14, 9.8)     # figure size in inches (width, height)
 
 # plt.rcParams['figure.dpi'] = 300               # resolution of figure in dots per inch dpi
 
